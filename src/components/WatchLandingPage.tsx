@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 // Este es ahora un Componente de Cliente. Maneja la interactividad y lo visual.
 export default function WatchLandingPage() {
 
-  const affiliateLink = "TU_ENLACE_DE_AFILIADO_AQUI"; 
+  const affiliateLink = "https://www.amazon.com/-/es/aluminio-azabache-deportiva-pantalla-impermeable/dp/B0DGHQ2QH6?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=GN6VAX5Y7VXS&dib=eyJ2IjoiMSJ9.AKGsC2gaxL6tGExjWy0B8sinFoUhG3F_DSLExbQyUeCvJTKFo7cvJRiTtd3AJrc2OgXjsfUQPYzRRec7fmSTDY656_OlN_w8HzJcO3NwCk-w13FPUEv9g7Qjkviuz_3_e-LOM66hLopYopfKe_D_vA6q5hEmjAYxcYGoC9_94FFFjKXWH-xA9Ywo_qvjP1rVvSCjhj0Hv3yLbfFd1nc_KPWtubyIgUB_QjwAxJMuzaw.Z6GjDQ67iDYHleueIVJRjBoqYROwstx1jd5dWd7oSi8&dib_tag=se&keywords=Apple%2BReloj%2Binteligente%2Bde%2Bla%2Bserie%2B11&qid=1765568092&sprefix=apple%2Breloj%2Binteligente%2Bde%2Bla%2Bserie%2B11%2Caps%2C237&sr=8-1&th=1&linkCode=ll1&tag=applewatchsho-20&linkId=6dc8a99eb03fb9c24a9c7b28023a419b&language=es_US&ref_=as_li_ss_tl"; 
   const domain = "https://TU_DOMINIO_DE_VERCEL.com"; // ¡IMPORTANTE!
 
   useEffect(() => {
