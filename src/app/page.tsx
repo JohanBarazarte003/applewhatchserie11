@@ -1,66 +1,137 @@
+"use client"; // Necesario para la interactividad del lado del cliente
+
 import Image from "next/image";
-import styles from "./page.module.css";
+import { useEffect } from 'react';
 
 export default function Home() {
+
+  // PASO CRUCIAL PARA LA AFILIACIÓN. REEMPLAZA '#' con tu enlace de Amazon real.
+  const affiliateLink = "TU_ENLACE_DE_AFILIADO_AQUI"; // Ejemplo: "https://www.amazon.es/dp/B0XXXXXXXX/tag=tu_id_afiliado-21"
+
+  useEffect(() => {
+    const linkTop = document.getElementById('affiliate-link');
+    const linkBottom = document.getElementById('affiliate-link-bottom');
+
+    if (linkTop) {
+      linkTop.setAttribute('href', affiliateLink);
+    }
+    if (linkBottom) {
+      linkBottom.setAttribute('href', affiliateLink);
+    }
+
+    if (affiliateLink === "TU_ENLACE_DE_AFILIADO_AQUI" || affiliateLink === "#") {
+        console.warn("¡ADVERTENCIA DE AFILIADO! Reemplaza 'TU_ENLACE_DE_AFILIADO_AQUI' con tu URL de Amazon para que la página funcione correctamente.");
+    }
+  }, []); // Se ejecuta solo una vez al cargar la página
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="text-gray-900 antialiased">
+      {/* Contenedor Principal Centrado */}
+      <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+
+          {/* Sección de Cabecera / Hero (Llamada de atención principal) */}
+          <header className="text-center bg-white p-6 sm:p-10 rounded-xl shadow-xl mb-8 border-t-8 border-gray-900">
+              <p className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-2">INNOVACIÓN 2024: Ya Disponible</p>
+              <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight text-gray-900 mb-4">
+                  Tu Salud. Tu Fitness. Tu <span className="text-indigo-600">Apple Watch Series 11.</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-600">
+                  El compañero indispensable con <strong>24 horas de batería</strong>, <strong>notificaciones de hipertensión</strong> y conexión <strong>5G</strong> independiente.
+              </p>
+          </header>
+
+          {/* Bloque de Producto: Imagen y CTA */}
+          <div className="bg-white rounded-xl shadow-2xl p-6 md:flex md:items-center md:space-x-8 mb-8">
+              
+              {/* Imagen del Producto Optimizada con Next.js */}
+              <div className="md:w-1/2 flex justify-center mb-6 md:mb-0">
+                  <Image 
+                      src="/apple-watch-reloj-inteligente-de-la-serie-11.jpg" 
+                      alt="Apple Watch Series 11 en muñeca" 
+                      width={600}
+                      height={600}
+                      className="w-full max-w-sm rounded-lg shadow-xl transition duration-500 ease-in-out transform hover:scale-[1.02] ring-4 ring-indigo-500/50"
+                  />
+              </div>
+
+              {/* Detalles Rápidos y Llamada a la Acción */}
+              <div className="md:w-1/2 text-center md:text-left">
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900">Las 4 Innovaciones que Cambian el Juego:</h2>
+                  <ul className="space-y-3 text-lg mb-8 text-gray-700 list-none pl-0">
+                      {/* Feature 1: Autonomía */}
+                      <li className="flex items-start">
+                          <svg className="flex-shrink-0 w-6 h-6 mr-3 text-indigo-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                          <p><span className="font-semibold text-gray-900">Autonomía Extrema (24h):</span> Olvídate de la carga diaria. 38h en modo bajo consumo y 8h de uso con solo 15 min de carga rápida.</p>
+                      </li>
+                      {/* Feature 2: Notificación Hipertensión */}
+                      <li className="flex items-start">
+                          <svg className="flex-shrink-0 w-6 h-6 mr-3 text-indigo-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                          <p><span className="font-semibold">Guardián Proactivo:</span> Nueva <span className="text-indigo-600">Notificación de Hipertensión</span> (alerta temprana) y detección de apnea del sueño.</p>
+                      </li>
+                      {/* Feature 3: Durabilidad */}
+                      <li className="flex items-start">
+                          <svg className="flex-shrink-0 w-6 h-6 mr-3 text-indigo-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.111a9.004 9.004 0 011.967 8.083c-.114.654-.51 1.258-1.077 1.743l-3.5 3.5a1.5 1.5 0 01-2.122 0l-3.5-3.5a1.5 1.5 0 010-2.122l3.5-3.5a1.5 1.5 0 012.122 0l1.414 1.414"></path></svg>
+                          <p><span className="font-semibold">Cristal Doblemente Fuerte:</span> Pantalla 2 veces más resistente a arañazos que el Series 10. Certificación IP6X contra polvo.</p>
+                      </li>
+                      {/* Feature 4: Conectividad 5G */}
+                      <li className="flex items-start">
+                          <svg className="flex-shrink-0 w-6 h-6 mr-3 text-indigo-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18V6m0 0l-3 3m3-3l3 3m1-1v8m-1-8l-3 3m3-3l3 3"></path></svg>
+                          <p><span className="font-semibold">Libertad 5G:</span> Conexión ultrarrápida para llamadas, streaming y pagos, sin necesidad de llevar tu iPhone contigo.</p>
+                      </li>
+                  </ul>
+
+                  {/* CTA Principal y urgente - Estilo limpio y oscuro */}
+                  <a id="affiliate-link" href="#" target="_blank" className="cta-button inline-block w-full sm:w-auto px-12 py-4 text-xl font-bold text-white bg-gray-900 rounded-lg hover:bg-black uppercase tracking-wider text-center">
+                      COMPRAR EN AMAZON (Stock 42mm)
+                  </a>
+                  <p className="text-sm text-gray-500 mt-3 font-semibold">Garantía Amazon y Envío Rápido. Haz clic antes de que se agote.</p>
+              </div>
+          </div>
+          
+          {/* Sección de Testimonios/Reseñas (Para generar confianza) */}
+          <section className="mb-8 p-6 bg-gray-100 rounded-xl shadow-inner">
+              <h3 className="text-2xl font-bold text-center mb-6 text-gray-900">Opiniones Verificadas de Usuarios</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Testimonio 1: Enfoque en Salud/Batería */}
+                  <div className="bg-white p-5 rounded-lg shadow-md border-t-4 border-indigo-600">
+                      <p className="text-xl text-gray-700 italic mb-3">"La mejora de batería es brutal. Ahora puedo monitorizar mi sueño completo sin preocuparme. Y saber que tengo el ECG y la detección de hipertensión es una tranquilidad invaluable."</p>
+                      <p className="font-semibold text-gray-800">- Laura S.</p>
+                      <p className="text-sm text-yellow-500 mt-1">⭐⭐⭐⭐⭐</p> 
+                  </div>
+                  {/* Testimonio 2: Enfoque en Fitness/Seguridad/5G */}
+                  <div className="bg-white p-5 rounded-lg shadow-md border-t-4 border-indigo-600">
+                      <p className="text-xl text-gray-700 italic mb-3">"Lo mejor es la independencia. Salgo a correr solo con el reloj y el 5G funciona perfecto para escuchar Spotify. Además, la detección de caídas me da mucha seguridad."</p>
+                      <p className="font-semibold text-gray-800">- Marco P.</p>
+                      <p className="text-sm text-yellow-500 mt-1">⭐⭐⭐⭐⭐</p>
+                  </div>
+              </div>
+          </section>
+
+          {/* Sección de Seguridad y Garantía (Detección de Caídas) - Tono más premium/sereno */}
+          <section className="text-center p-6 bg-indigo-50 rounded-xl border-2 border-indigo-200 mb-8">
+              <h3 className="text-2xl font-bold mb-2 text-indigo-800">Seguridad que te Respalda</h3>
+              <p className="text-lg text-indigo-700 font-medium">Equipado con Detección de Caídas y Choques. Si sufres un accidente grave, el Series 11 llama automáticamente a emergencias. Es más que un reloj, es un <strong>guardián de vida</strong>.</p>
+          </section>
+
+          {/* Repetir CTA para mobile al final de la página */}
+          <div className="text-center pb-8">
+              <a id="affiliate-link-bottom" href="#" target="_blank" className="cta-button inline-block w-full sm:w-3/4 px-12 py-4 text-xl font-bold text-white bg-gray-900 rounded-lg hover:bg-black uppercase tracking-wider text-center">
+                  ASEGURA EL TUYO HOY EN AMAZON
+              </a>
+              <p className="text-sm text-gray-500 mt-3 font-semibold">El stock de modelos exclusivos (Titanio) es limitado.</p>
+          </div>
+      </div>
+      
+      {/* Footer con Disclaimer (IMPORTANTE para afiliados de Amazon) */}
+      <footer className="bg-gray-900 text-white p-6 mt-8">
+          <div className="max-w-4xl mx-auto text-center text-xs text-gray-400 space-y-3">
+              <p>
+                  <span className="font-bold">Aviso de Afiliación:</span> Este sitio web participa en el Programa de Afiliados de Amazon. Como Asociados de Amazon, ganamos por las compras que cumplen con los requisitos aplicables. 
+                  Los precios y la disponibilidad están sujetos a cambios. Haz clic en el botón de compra para verificar el precio actual y el stock en Amazon.
+              </p>
+              <p>&copy; 2024 Apple Watch Series 11 Landing. Todos los derechos reservados.</p>
+          </div>
+      </footer>
+    </main>
   );
 }
